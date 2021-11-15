@@ -231,11 +231,11 @@ class Leave(object):
         datas = {"QJLX_DISPLAY": "不涉及职能部门", "QJLX": "3bc0d68330fd4d869152238251b867ee", "DZQJSY_DISPLAY": "因事出校（当天往返）",
                  "DZQJSY": "763ec35f8f5545c0aa245e8fbc20adb2", "QJXZ_DISPLAY": "因公", "QJXZ": "2", "QJFS_DISPLAY": "请假",
                  "QJFS": "1", "YGLX_DISPLAY": "实验", "YGLX": "3", "SQSM": "", "QJKSRQ": "",
-                 "QJJSRQ": "", "QJTS": "1", "QJSY": "去无线谷科研", "ZMCL": "", "SJH": "",
+                 "QJJSRQ": "", "QJTS": "1", "QJSY": "前往南高智能装备创新中心实验", "ZMCL": "", "SJH": "",
                  "DZSFLX_DISPLAY": "是", "DZSFLX": "1", "HDXQ_DISPLAY": "九龙湖校区", "HDXQ": "1", "DZSFLN_DISPLAY": "否",
                  "DZSFLN": "0", "DZSFLKJSS_DISPLAY": "", "DZSFLKJSS": "", "DZ_SFCGJ_DISPLAY": "", "DZ_SFCGJ": "",
                  "DZ_GJDQ_DISPLAY": "", "DZ_GJDQ": "", "QXSHEN_DISPLAY": "", "QXSHEN": "", "QXSHI_DISPLAY": "", "QXSHI": "",
-                 "QXQ_DISPLAY": "", "QXQ": "", "QXJD": "", "XXDZ": "无线谷", "JTGJ_DISPLAY": "", "JTGJ": "", "CCHBH": "",
+                 "QXQ_DISPLAY": "", "QXQ": "", "QXJD": "", "XXDZ": "江宁国际企业总部园B5栋", "JTGJ_DISPLAY": "", "JTGJ": "", "CCHBH": "",
                  "SQBH": "", "XSBH": "", "JJLXR": "", "JJLXRDH": "",
                  "JZXM": "", "JZLXDH": "", "DSXM": "", "DSDH": "", "FDYXM": "",
                  "FDYDH": "", "SFDSQ": "0"}
@@ -249,13 +249,13 @@ class Leave(object):
             else:
                 post_info[key] = value
         if post_info['QJSY'] == '':
-            post_info['QJSY'] = "去无线谷科研"
+            post_info['QJSY'] = "前往南高智能装备创新中心实验"
         if post_info['XXDZ'] == '':
-            post_info['XXDZ'] = "去无线谷科研"
+            post_info['XXDZ'] = "江宁国际企业总部园B5栋"
         post_info['SQBH'] = ''
         now_time = datetime.datetime.now()
-        post_info["QJKSRQ"] = (now_time + datetime.timedelta(days=+1)).strftime("%Y-%m-%d 06:00")
-        post_info["QJJSRQ"] = (now_time + datetime.timedelta(days=+1)).strftime("%Y-%m-%d 23:59")
+        post_info["QJKSRQ"] = (now_time + datetime.timedelta(days=+1)).strftime("%Y-%m-%d 08:00")
+        post_info["QJJSRQ"] = (now_time + datetime.timedelta(days=+1)).strftime("%Y-%m-%d 23:00")
 
         save_url = self.urlBegin + 'modules/leaveApply/addLeaveApply.do'
         self.header['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8'
