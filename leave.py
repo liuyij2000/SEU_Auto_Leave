@@ -254,8 +254,8 @@ class Leave(object):
             post_info['XXDZ'] = "去无线谷科研"
         post_info['SQBH'] = ''
         now_time = datetime.datetime.now()
-        post_info["QJKSRQ"] = (now_time + datetime.timedelta(days=+1)).strftime("%Y-%m-%d 06:30:00")
-        post_info["QJJSRQ"] = (now_time + datetime.timedelta(days=+1)).strftime("%Y-%m-%d 21:00:00")
+        post_info["QJKSRQ"] = (now_time + datetime.timedelta(days=+1)).strftime("%Y-%m-%d 06:30")
+        post_info["QJJSRQ"] = (now_time + datetime.timedelta(days=+1)).strftime("%Y-%m-%d 22:00")
 
         save_url = self.urlBegin + 'modules/leaveApply/addLeaveApply.do'
         self.header['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8'
